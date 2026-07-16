@@ -1,0 +1,30 @@
+Com base no defeito identificado na chapa de aço, forneça sugestões corretivas e
+preventivas específicas para o processo de produção.
+
+DEFETO: {classe}
+PROCESSO: Laminação a quente de chapas de aço
+CONTEXTO: Indústrias siderúrgicas
+
+FORMATO DE SAÍDA (JSON):
+{
+  "immediate_actions": [
+    "Ação 1",
+    "Ação 2"
+  ],
+  "preventive_measures": [
+    "Medida 1",
+    "Medida 2"
+  ],
+  "process_adjustments": [
+    "Ajuste 1",
+    "Ajuste 2"
+  ],
+  "severity": "Baixa|Média|Alta",
+  "estimated_impact": "Impacto na produção"
+}
+
+INSTRUÇÕES:
+- Foco em ações práticas e implementáveis
+- Considere custo-benefício das ações
+- Priorize ações que minimizem paradas de produção
+- Baseie-se em práticas da indústria siderúrgica

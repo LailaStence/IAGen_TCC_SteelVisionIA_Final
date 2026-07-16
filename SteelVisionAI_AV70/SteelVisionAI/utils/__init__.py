@@ -1,0 +1,1 @@
+# SteelVision AI — Utilitários

@@ -1,0 +1,92 @@
+/* =========================================================================
+   SteelVision AI — Estilo Personalizado
+   Cores: Azul escuro (#0A4D8C) e Laranja (#F57C00)
+   ========================================================================= */
+
+/* --- Corpo --- */
+body {
+    background-color: #f0f2f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Títulos --- */
+h1, h2, h3 {
+    color: #0A4D8C;
+    font-weight: 700;
+}
+
+/* --- Sidebar --- */
+section[data-testid="stSidebar"] {
+    background-color: #0A4D8C;
+}
+
+section[data-testid="stSidebar"] * {
+    color: white;
+}
+
+/* --- Botões --- */
+.stButton > button {
+    background-color: #F57C00;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.stButton > button:hover {
+    background-color: #d96d00;
+}
+
+/* --- Cards --- */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    margin-bottom: 20px;
+    border-left: 4px solid #0A4D8C;
+}
+
+/* --- Métricas --- */
+[data-testid="metric-container"] {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+}
+
+/* --- Upload --- */
+.stFileUploader {
+    margin-bottom: 20px;
+}
+
+/* --- Divider --- */
+hr {
+    border-color: #0A4D8C;
+    opacity: 0.3;
+}
+
+/* --- Alertas --- */
+.stAlert {
+    border-radius: 10px;
+}
+
+/* --- Dataframe --- */
+div[data-testid="stDataframe"] {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Slider e Select --- */
+.stSlider > div > div > div > div {
+    background-color: #0A4D8C;
+}
+
+.stSelectbox > div > div {
+    border: 1px solid #0A4D8C;
+    border-radius: 8px;
+}

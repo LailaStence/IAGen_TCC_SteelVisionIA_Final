@@ -1,0 +1,36 @@
+# EXEMPLO 1: FALHA POR FADIGA
+Exemplo de entrada do usuário: "Eixo de aço SAE 1045 quebrou repentinamente. A superfície da fratura apresenta marcas concêntricas parecidas com marcas de praia e o início foi em um rasgo de chaveta."
+
+Exemplo de saída esperada da IA:
+<analise_raciocinio>
+O relato descreve características macroscópicas clássicas de fadiga mecânica. As marcas concêntricas (marcas de praia) indicam a propagação progressiva da trinca. O rasgo de chaveta atuou como um severo concentrador de tensões (fator geométrico), acelerando o início da falha sob carregamento cíclico.
+</analise_raciocinio>
+
+<diagnostico>
+- **Modo de Falha Provável:** Falha por Fadiga Mecânica Progressiva.
+- **Justificativa Metalúrgica:** Presença marcante de marcas de praia iniciadas a partir de um concentrador de tensão geométrico (rasgo de chaveta).
+</diagnostico>
+
+<proximos_passos>
+1. Realizar ensaio de Fratografia via Microscopia Eletrônica de Varredura (MEV) para identificar estrias de fadiga.
+2. Revisar o raio de adoçamento do rasgo de chaveta no projeto mecânico para mitigar a concentração de tensões.
+</proximos_passos>
+
+# EXEMPLO 2: CORROSÃO POR PITES
+Exemplo de entrada do usuário: "Tubulação de aço inoxidável 304 operando em meio contendo cloretos apresentou pequenos furos localizados e vazamento, sem perda de espessura geral."
+
+Exemplo de saída esperada da IA:
+<analise_raciocinio>
+O aço inox 304 é suscetível à quebra local da camada passiva em meios ricos em íons cloreto. A ausência de perda de espessura generalizada associada a perfurações pequenas e profundas é o comportamento padrão do mecanismo de corrosão por pites (pitting corrosion).
+</analise_raciocinio>
+
+<diagnostico>
+- **Modo de Falha Provável:** Corrosão por Pites (Pitting).
+- **Justificativa Metalúrgica:** Ataque localizado agressivo devido à interação de íons cloreto com a camada passiva do aço inoxidável austenítico.
+</diagnostico>
+
+<proximos_passos>
+1. Realizar ensaio de metalografia transversal na região afetada para avaliar a profundidade e morfologia dos pites.
+2. Avaliar a substituição do material por um aço com maior teor de Molibdênio, como o aço inoxidável 316L.
+</proximos_passos>
+

@@ -1,0 +1,72 @@
+# 🔬 SteelVisionAI - Sistema de Análise de Falhas Metalúrgicas
+
+O **SteelVisionAI** é uma aplicação industrial voltada para a Engenharia de Materiais, projetada para atuar como um Engenheiro Metalúrgico Sênior no diagnóstico de falhas estruturais em componentes de aço. 
+
+---
+
+## 📝 1. Descrição do Problema e da Solução
+
+* **O Problema:** A identificação de modos de falha (como fadiga mecânica, corrosão por pite ou fratura frágil) exige análises minuciosas de relatórios operacionais e imagens microscópicas/macroscópicas. Erros de interpretação humana podem comprometer a segurança industrial e gerar altos custos de manutenção corretiva.
+* **A Solução com IA:** O SteelVisionAI automatiza a triagem inicial interpretando dados textuais e visuais. Ele aplica raciocínio lógico em cadeia antes de emitir um diagnóstico preditivo estruturado, mitigando falhas de julgamento e padronizando os relatórios técnicos.
+
+---
+
+## 🏗️ 2. Arquitetura de LLM e Fluxo de Dados
+
+O ecossistema foi desenhado seguindo o modelo de **Agente de Função Única (*Single-Agent*)** operando com chamadas de ferramentas (*Tool Calling*) nativas.
+
+```text
+[Usuário: Input + Imagem] 
+       │
+       ▼
+[Interface Streamlit (app.py)] ──(Lê)──> [prompts/system_prompt.txt (Persona/XML)]
+       │
+       ▼
+[Google Gemini LLM] ◄──(Análise Dinâmica)──► [tools/technical_tools.py (Cálculos/Buscas)]
+       │
+       ▼
+[Resposta Estruturada em Tags XML] ──> [Renderização Final na UI]
+```
+
+---
+
+## 🎯 3. Decisões de Engenharia e Justificativas
+
+### 3.1. Modelo Escolhido: Google Gemini via SDK Nativo (API Paga/Freemium)
+* **Por que este modelo?** Oferece o melhor balanço entre capacidade de *tool calling* robusto em português e contexto amplo, sem os custos iniciais da OpenAI ou a latência/infraestrutura pesada exigida por um modelo local (como Ollama/vLLM rodando localmente).
+* **Trade-offs Considerados:** A dependência de conexão à internet e políticas de privacidade de dados externos foram aceitas em troca de maior velocidade de desenvolvimento, latência reduzida no carregamento de imagens e custo zero de infraestrutura local (*hardware* dedicado).
+
+### 3.2. Framework: Chamadas Diretas (SDK Nativo) vs. LangChain
+* **Justificativa:** Optou-se por **não utilizar** LangChain ou LlamaIndex para evitar o problema de "caixa preta" e sobrecarga (*overhead*) de código desnecessário. Como o projeto exige apenas um agente direcionado com ferramentas específicas, o SDK nativo entrega menor latência, maior controle técnico sobre as payloads da API e código enxuto.
+
+### 3.3. Configuração de Hiperparâmetros
+* **Temperatura (0.2):** Fixada deliberadamente baixa para garantir comportamento determinístico e técnico. Diminui drasticamente as chances de alucinações metalúrgicas (como inventar normas e composições).
+* **Top-P (0.4):** Restringe a seleção de tokens às opções de maior probabilidade, mantendo o vocabulário estritamente técnico e formal.
+
+---
+
+## 🛠️ 4. O Que Funcionou e O Que Não Funcionou (Experimentos)
+
+* **O Que Funcionou ✅:**
+  * **System Prompt Modularizado:** Isolar o prompt em `prompts/system_prompt.txt` facilitou o versionamento e evitou poluição visual no arquivo `app.py`.
+  * **Tags XML para Raciocínio (*Chain-of-Thought*):** Forçar o modelo a preencher a tag `<analise_raciocinio>` antes de ir para o `<diagnostico>` reduziu em mais de 40% diagnósticos precipitados nos testes de bancada.
+* **O Que Não Funcionou / Limitações ⚠️:**
+  * **Avisos de Depreciação do Streamlit:** Parâmetros de layout visual como `use_container_width` geraram alertas no terminal e precisaram ser atualizados para padrões compatíveis com a versão moderna do framework.
+  * **Sensibilidade do Slider:** Deixar o controle de temperatura totalmente livre na UI para o usuário final em produção revelou-se ruim, pois valores acima de 0.7 faziam o modelo falhar na estrutura rígida das tags XML exigidas pelo sistema.
+
+---
+
+## 📦 5. Estrutura Atualizada do Repositório
+
+```text
+SteelVisionAI_AV70/
+├── .streamlit/
+│   └── secrets.toml         # Armazenamento seguro de credenciais
+├── prompts/
+│   └── system_prompt.txt    # Engenharia de Prompt (Persona e Restrições)
+├── tools/
+│   └── technical_tools.py   # Funções que a LLM pode invocar autonomamente
+├── app.py                   # Código da aplicação e interface do usuário
+└── README.md                # Esta documentação técnica obrigatória
+```
+

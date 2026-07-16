@@ -1,0 +1,35 @@
+Gere um relatório técnico de qualidade para o defeito detectado na chapa de aço.
+
+INPUT:
+- Classe do defeito: {classe}
+- Confiança da CNN: {confianca}%
+- Nome do arquivo: {arquivo}
+
+ESTRUTURA OBRIGATÓRIA DO RELATÓRIO:
+
+## Relatório de Qualidade — SteelVision AI
+
+**Defeito Detectado:** [nome do defeito]
+**Confiança da Classificação:** [X]%
+**Data da Análise:** [data atual]
+
+### 1. Descrição do Defeito
+[Descreva o defeito de forma técnica em 2-3 frases]
+
+### 2. Causa Provável
+[Indique as causas mais comuns deste defeito]
+
+### 3. Severidade Estimada
+[Classifique como Baixa, Média ou Alta com justificativa]
+
+### 4. Ações Recomendadas
+[Liste 2-3 ações corretivas específicas]
+
+### 5. Prevenção
+[Sugira medidas preventivas para evitar recorrência]
+
+REGRAS:
+- Seja conciso (máximo 300 palavras)
+- Use linguagem técnica apropriada para engenheiros de qualidade
+- Não invente dados — baseie-se apenas nas informações fornecidas pelas ferramentas
+- Se o nível de confiança for abaixo de 70%, adicione um aviso de verificação manual

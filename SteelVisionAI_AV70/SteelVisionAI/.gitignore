@@ -1,0 +1,42 @@
+# Ambientes virtuais
+.venv/
+venv/
+ENV/
+
+# Bytecode Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Modelos treinados (arquivos grandes)
+*.keras
+*.h5
+*.tf
+*.pb
+models/
+historico_predicoes.json
+
+# Dataset de treino (arquivos de imagens brutos)
+dataset/train/images/
+
+# IDE e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Distribuição
+dist/
+build/
+*.egg-info/

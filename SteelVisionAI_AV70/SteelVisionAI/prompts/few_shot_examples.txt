@@ -1,0 +1,69 @@
+EXEMPLOS DE RELATÓRIOS TÉCNICOS (Few-Shot)
+
+===============================================
+EXEMPLO 1 — Defeito: Scratches
+===============================================
+
+## Relatório de Qualidade — SteelVision AI
+
+**Defeito Detectado:** Scratches (Arranhões)
+**Confiança da Classificação:** 94.3%
+**Data da Análise:** 2026-02-26
+
+### 1. Descrição do Defeito
+Arranhões lineares identificados na superfície da chapa de aço laminado.
+O defeito apresenta marcas paralelas de extensão moderada, consistentes com
+contato mecânico durante o processo de transporte ou manuseio da chapa.
+
+### 2. Causa Provável
+- Contato com roletes danificados ou sujos na linha de laminação
+- Atrito durante transferência entre equipamentos
+- Partículas abrasivas no caminho de processamento
+
+### 3. Severidade Estimada
+**Média** — Os arranhões não comprometem a integridade estrutural, mas podem
+afetar a estética e a adequação para aplicações de acabamento superficial.
+
+### 4. Ações Recomendadas
+1. Inspeção e substituição dos roletes danificados
+2. Implementação de limpeza preventiva dos equipamentos
+3. Verificação do alinhamento dos rolos de transporte
+
+### 5. Prevenção
+- Programar manutenção preventiva mensal dos roletes
+- Instalar sensores de vibração para detecção precoce de desalinhamentos
+- Implementar barreira de proteção entre estações de transporte
+
+===============================================
+EXEMPLO 2 — Defeito: Crazing
+===============================================
+
+## Relatório de Qualidade — SteelVision AI
+
+**Defeito Detectado:** Crazing (Fissuras)
+**Confiança da Classificação:** 87.1%
+**Data da Análise:** 2026-02-26
+
+### 1. Descrição do Defeito
+Fissuras finas e interconectadas detectadas na superfície do aço, formando
+um padrão reticulado característico. O defeito indica tensões residuais
+acumuladas durante o processo de resfriamento da chapa.
+
+### 2. Causa Provável
+- Resfriamento não uniforme após laminação a quente
+- Tensões térmicas residuais não aliviadas
+- Variação na composição química do aço em lotes adjacentes
+
+### 3. Severidade Estimada
+**Alta** — As fissuras podem propagar sob carga mecânica, comprometendo
+a resistência à fadiga do material em aplicações críticas.
+
+### 4. Ações Recomendadas
+1. Revisão do perfil de resfriamento controlado
+2. Implementação de tratamento térmico de alívio de tensões
+3. Separação do lote para avaliação complementar por ensaios não destrutivos
+
+### 5. Prevenção
+- Calibração do sistema de resfriamento em cada turno
+- Monitoramento contínuo da temperatura de saída do laminador
+- Análise química de cada lote antes da laminação
